@@ -1,13 +1,13 @@
-package br.com.api.lab.shopping.apirestlabshoppinglist;
+package com.br.futurodev.api.shopping.list.springapishoppinglist;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApiRestLabShoppingListApplication {
+public class SpringApiShoppingListApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApiRestLabShoppingListApplication.class, args);
+		SpringApplication.run(SpringApiShoppingListApplication.class, args);
 	}
 
 }
