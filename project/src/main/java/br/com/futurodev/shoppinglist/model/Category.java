@@ -2,6 +2,8 @@ package br.com.futurodev.shoppinglist.model;
 
 
 import lombok.*;
+import org.springframework.lang.Nullable;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -22,6 +24,7 @@ public class Category implements Serializable {
     private String name;
 
     //Descrição da categoria: Tipo texto, preenchimento não obrigatório
+    @Column (name = "desc")
     private String description;
 
 }
