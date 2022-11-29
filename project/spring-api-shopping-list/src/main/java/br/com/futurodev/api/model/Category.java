@@ -1,4 +1,4 @@
-package main.java.br.com.futurodev.api.model;
+
 import java.io.Serializable;
 
 @Getter
