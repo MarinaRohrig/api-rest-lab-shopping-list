@@ -1,4 +1,4 @@
-package br.com.futurodev.api.*;
+package main.java.br.com.futurodev.api.model;
 import java.io.Serializable;
 
 @Getter
@@ -12,6 +12,4 @@ public class Category implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    
-    
 }
