@@ -1,3 +1,4 @@
+package br.com.futurodev.api.controllers;
 
 @Api(tags = "Category")
 @RestController

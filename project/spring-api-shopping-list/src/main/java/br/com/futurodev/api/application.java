@@ -1,4 +1,4 @@
-package com.br.futurodev.api.shopping.list.springapishoppinglist;
+package br.com.futurodev.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

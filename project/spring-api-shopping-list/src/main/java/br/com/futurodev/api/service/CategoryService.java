@@ -1,3 +1,4 @@
+package br.com.futurodev.api.service;
 @Service
 public class CategoryService {
 
