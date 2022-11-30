@@ -54,7 +54,7 @@ public class ProductController {
     @ResponseBody
     public ResponseEntity<String> delete(@ApiParam(value = "ID do produto", example = "12") @RequestParam Long idProduct){
         productService.deleteById(idProduct);
-        return new ResponseEntity<String>("Produto: " + idProduct +": deletado!", HttpStatus.OK);
+        return new ResponseEntity<String>("Produto: " + idProduct +", deletado!", HttpStatus.OK);
     }
 
     private List<ProductRepresentation> toCollection(List<Product> products){

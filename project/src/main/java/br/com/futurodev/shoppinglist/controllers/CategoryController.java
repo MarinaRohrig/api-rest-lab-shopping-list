@@ -5,6 +5,8 @@ import br.com.futurodev.shoppinglist.input.CategoryInput;
 import br.com.futurodev.shoppinglist.model.Category;
 import br.com.futurodev.shoppinglist.service.CategoryService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,13 +22,21 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
+    @ApiOperation("Salva categorias")
     @PostMapping
     public ResponseEntity<CategoryRepresentation> registry (@RequestBody CategoryInput categoryInput){
         Category category = categoryService.saveCat(toDomainObject(categoryInput));
         return new ResponseEntity<>(toModel(category), HttpStatus.OK);
     }
 
-    @PutMapping
+    @ApiOperation("Deleta uma categoria")
+    @DeleteMapping
+    @ResponseBody
+    public ResponseEntity<String> delete(@ApiParam(value="ID da categoria", example = "12") @RequestParam Long idCategory){
+        categoryService.deleteById(idCategory);
+        return new ResponseEntity<>("Categoria:"+ idCategory+", deletado!", HttpStatus.OK);
+    }
+
 
     private Category toDomainObject(CategoryInput categoryInput){
         Category category = new Category();
