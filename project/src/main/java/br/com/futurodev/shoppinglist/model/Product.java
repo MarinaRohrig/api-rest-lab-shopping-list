@@ -2,7 +2,6 @@ package br.com.futurodev.shoppinglist.model;
 
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -11,6 +10,9 @@ import java.io.Serializable;
 @Entity
 @Table(name = "product")
 public class Product implements Serializable {
+
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,7 +22,9 @@ public class Product implements Serializable {
               foreignKey = @ForeignKey(name = "fk_category"))
     private Category category;
 
-    private String name;
+    @Column(nullable = false)
+    private String description;
+    @Column(nullable = false)
     private double price;
     private boolean buyed;
 }

@@ -19,10 +19,10 @@ public class SpringFoxConfig extends WebMvcConfigurationSupport {
 
     @Bean
     public Docket apiDocket(){
-        return new Docket(DocumentationType.SWAGGER_2) // informa qual o tipo de documentação que vamos usar
-                .select() // retornamos um builder para selecionar os endpoints que deve ser expostos
-                .apis(RequestHandlerSelectors.any()) // especificar o que queremos, e quais controladores, endpoints que o springfox orá scanear
-                .build() // montamos nosso sumário Docket
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .build()
                 .apiInfo(metaData())
                 .tags(new Tag("Product", "Gerencia produtos"),
                         new Tag("Category", "Gerencia categorias"));

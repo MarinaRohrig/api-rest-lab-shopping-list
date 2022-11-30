@@ -21,10 +21,11 @@ public class Category implements Serializable {
     private Long id;
 
     //Nome da categoria: Única, tipo texto, preenchimento obrigatório
+    @Column (nullable = false,unique = true)
     private String name;
 
     //Descrição da categoria: Tipo texto, preenchimento não obrigatório
-    @Column (name = "desc")
+    @Column (nullable = true)
     private String description;
 
 }
