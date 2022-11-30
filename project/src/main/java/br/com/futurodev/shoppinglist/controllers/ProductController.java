@@ -12,6 +12,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 @Api(tags = "Product")
 @RestController
@@ -21,7 +24,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @ApiOperation("Register a product")
+    @ApiOperation("Salva produtos")
     @PostMapping
     public ResponseEntity<ProductRepresentation> register(@RequestBody ProductInput productInput){
         Product product = toDomainObject(productInput);
@@ -29,13 +32,26 @@ public class ProductController {
         return new ResponseEntity<>(toModel(product), HttpStatus.CREATED);
     }
 
-    @ApiOperation("Update a product")
+    @ApiOperation("Atualiza os produtos")
     @PutMapping
     public ResponseEntity<ProductRepresentation> update(@RequestBody ProductInput productInput){
         Product product = productService.saveProd(toDomainObject(productInput));
         return new ResponseEntity<>(toModel(product),HttpStatus.OK);
     }
 
+    @ApiOperation("Lista os produtos")
+    @GetMapping
+    @ResponseBody
+    public ResponseEntity<List<ProductRepresentation>> getProducts(){
+        List<Product> products = productService.getProducts();
+        List<ProductRepresentation> productRepresentation  = toCollection(products);
+        return new ResponseEntity<>(productRepresentation,HttpStatus.OK);
+    }
+
+
+    private List<ProductRepresentation> toCollection(List<Product> products){
+        return products.stream().map(Product -> toModel(Product)).collect(Collectors.toList());
+    }
   
 
     private Product toDomainObject(ProductInput productInput){
