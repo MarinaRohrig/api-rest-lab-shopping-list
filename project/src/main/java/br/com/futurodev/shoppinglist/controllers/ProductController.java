@@ -6,6 +6,7 @@ import br.com.futurodev.shoppinglist.model.Product;
 import br.com.futurodev.shoppinglist.service.ProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -48,6 +49,13 @@ public class ProductController {
         return new ResponseEntity<>(productRepresentation,HttpStatus.OK);
     }
 
+    @ApiOperation("Deleta um produto")
+    @DeleteMapping
+    @ResponseBody
+    public ResponseEntity<String> delete(@ApiParam(value = "ID do produto", example = "12") @RequestParam Long idProduct){
+        productService.deleteById(idProduct);
+        return new ResponseEntity<String>("Produto: " + idProduct +": deletado!", HttpStatus.OK);
+    }
 
     private List<ProductRepresentation> toCollection(List<Product> products){
         return products.stream().map(Product -> toModel(Product)).collect(Collectors.toList());
