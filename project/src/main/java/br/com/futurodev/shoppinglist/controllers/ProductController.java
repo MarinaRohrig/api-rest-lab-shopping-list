@@ -3,10 +3,9 @@ package br.com.futurodev.shoppinglist.controllers;
 import br.com.futurodev.shoppinglist.dto.ProductRepresentation;
 import br.com.futurodev.shoppinglist.input.ProductInput;
 import br.com.futurodev.shoppinglist.model.Product;
+import br.com.futurodev.shoppinglist.service.CategoryService;
 import br.com.futurodev.shoppinglist.service.ProductService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.*;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,6 +23,9 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private CategoryService categoryService;
 
     @ApiOperation("Salva produtos")
     @PostMapping
@@ -43,6 +45,8 @@ public class ProductController {
     @ApiOperation("Lista os produtos")
     @GetMapping
     @ResponseBody
+    @ApiResponses(value = {@ApiResponse(code=200, message="Produtos listados com sucesso")
+    , @ApiResponse(code = 401, message = "Usuário sem permissão")})
     public ResponseEntity<List<ProductRepresentation>> getProducts(){
         List<Product> products = productService.getProducts();
         List<ProductRepresentation> productRepresentation  = toCollection(products);
@@ -67,6 +71,7 @@ public class ProductController {
         product.setId(productInput.getIdProduct());
         product.setDescription(productInput.getDescription());
         product.setPrice(productInput.getPrice());
+        product.setCategory(categoryService.getCategoryById(productInput.getIdCategory()));
         return product;
     }
 

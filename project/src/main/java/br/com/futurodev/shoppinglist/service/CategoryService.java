@@ -21,4 +21,8 @@ public class CategoryService {
         categoryRepository.deleteById(idCategory);
     }
 
+    public Category getCategoryById(Long idCategory) {
+        Category category = categoryRepository.findById(idCategory).get();
+        return category;
+    }
 }
