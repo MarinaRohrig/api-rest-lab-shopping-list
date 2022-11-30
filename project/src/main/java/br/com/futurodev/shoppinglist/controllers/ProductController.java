@@ -27,7 +27,7 @@ public class ProductController {
 
     @ApiOperation("Salva produtos")
     @PostMapping
-    public ResponseEntity<ProductRepresentation> register(@RequestBody ProductInput productInput){
+    public ResponseEntity<ProductRepresentation> registry(@RequestBody ProductInput productInput){
         Product product = toDomainObject(productInput);
         productService.saveProd(product);
         return new ResponseEntity<>(toModel(product), HttpStatus.CREATED);
