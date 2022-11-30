@@ -10,7 +10,6 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -21,7 +20,7 @@ public class CategoryController {
 
     @Autowired
     private CategoryService categoryService;
-
+    
     @ApiOperation("Salva categorias")
     @PostMapping
     public ResponseEntity<CategoryRepresentation> registry (@RequestBody CategoryInput categoryInput){
