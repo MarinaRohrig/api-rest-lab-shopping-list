@@ -10,4 +10,5 @@ public class ProductRepresentation {
     private String description;
     private double price;
     private boolean buyed;
+    private Long idCategory;
 }

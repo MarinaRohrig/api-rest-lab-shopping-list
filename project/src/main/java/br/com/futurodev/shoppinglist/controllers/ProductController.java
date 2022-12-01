@@ -1,17 +1,19 @@
 package br.com.futurodev.shoppinglist.controllers;
 
+
 import br.com.futurodev.shoppinglist.dto.ProductRepresentation;
 import br.com.futurodev.shoppinglist.input.ProductInput;
 import br.com.futurodev.shoppinglist.model.Product;
+import br.com.futurodev.shoppinglist.service.CategoryService;
 import br.com.futurodev.shoppinglist.service.ProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 import java.util.stream.Collectors;
