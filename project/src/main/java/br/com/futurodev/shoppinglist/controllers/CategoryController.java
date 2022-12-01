@@ -1,8 +1,10 @@
 package br.com.futurodev.shoppinglist.controllers;
 
 import br.com.futurodev.shoppinglist.dto.CategoryRepresentation;
+import br.com.futurodev.shoppinglist.dto.ProductRepresentation;
 import br.com.futurodev.shoppinglist.input.CategoryInput;
 import br.com.futurodev.shoppinglist.model.Category;
+import br.com.futurodev.shoppinglist.model.Product;
 import br.com.futurodev.shoppinglist.service.CategoryService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -11,6 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Api(tags = "Category")
@@ -36,7 +41,19 @@ public class CategoryController {
         return new ResponseEntity<>("Categoria:"+ idCategory+", deletado!", HttpStatus.OK);
     }
 
+    @ApiOperation("Lista as categorias")
+    @GetMapping
+    @ResponseBody
+    public ResponseEntity<List<CategoryRepresentation>> getCategory(){
+        List<Category> categories = categoryService.getCategory();
+        List<CategoryRepresentation> categoryRepresentation = toCollection(categories);
+        return new ResponseEntity<>(categoryRepresentation, HttpStatus.OK);
+    }
 
+
+    private List <CategoryRepresentation> toCollection(List<Category> categories){
+        return categories.stream().map(Category -> toModel(Category)).collect(Collectors.toList());
+    }
     private Category toDomainObject(CategoryInput categoryInput){
         Category category = new Category();
         category.setId(categoryInput.getIdCategory());
@@ -44,7 +61,6 @@ public class CategoryController {
         category.setName(categoryInput.getName());
         return category;
     }
-
     private CategoryRepresentation toModel (Category category){
         CategoryRepresentation categoryRepresentation = new CategoryRepresentation();
         categoryRepresentation.setIdCategory(category.getId());

@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d94b6aba-e26b-469a-a3d4-560bac1feef0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/futurodev/shoppinglist/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/futurodev/shoppinglist/controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/futurodev/shoppinglist/dto/ProductRepresentation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/futurodev/shoppinglist/dto/ProductRepresentation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/futurodev/shoppinglist/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/futurodev/shoppinglist/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/futurodev/shoppinglist/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/futurodev/shoppinglist/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/requests/GreetingsControllerTest.java" beforeDir="false" />
-    </list>
+    <list default="true" id="d94b6aba-e26b-469a-a3d4-560bac1feef0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

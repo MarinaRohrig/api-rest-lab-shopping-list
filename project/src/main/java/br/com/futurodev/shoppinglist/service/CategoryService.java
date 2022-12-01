@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class CategoryService {
@@ -20,5 +21,9 @@ public class CategoryService {
     public void deleteById(Long idCategory){
         categoryRepository.deleteById(idCategory);
     }
+
+    @Transactional
+    public List<Category> getCategory(){return (List <Category> )categoryRepository.findAll();}
+
 
 }
