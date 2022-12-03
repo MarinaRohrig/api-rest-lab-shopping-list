@@ -7,8 +7,6 @@
     <list default="true" id="d94b6aba-e26b-469a-a3d4-560bac1feef0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/futurodev/shoppinglist/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/futurodev/shoppinglist/controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/futurodev/shoppinglist/input/ProductInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/futurodev/shoppinglist/input/ProductInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/import.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/import.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

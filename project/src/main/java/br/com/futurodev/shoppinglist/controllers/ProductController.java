@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,6 +27,8 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+
+   private DecimalFormat formater = new DecimalFormat("0.00");
 
     @ApiOperation("Salva produtos")
     @PostMapping
@@ -57,6 +60,18 @@ public class ProductController {
     public ResponseEntity<String> delete(@ApiParam(value = "ID do produto", example = "12") @RequestParam Long idProduct){
         productService.deleteById(idProduct);
         return new ResponseEntity<String>("Produto: " + idProduct +", deletado!", HttpStatus.OK);
+    }
+
+    @ApiOperation("Lista o valor total comprado")
+    @GetMapping(value = "expenses")
+    @ResponseBody
+    public ResponseEntity<String> expenses (){
+        double value = 0.0;
+        List<Product> products = productService.getProducts();
+        for (int i = 0; i<productService.getProducts().size(); i++){
+            value += products.get(i).getPrice();
+        }
+        return new ResponseEntity<String>("O valor total gasto foi de: R$" + formater.format(value), HttpStatus.OK);
     }
 
     private List<ProductRepresentation> toCollection(List<Product> products){
