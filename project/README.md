@@ -16,8 +16,7 @@
 ## Modelo Relacional
 <img src="/project/Model.png" alt="Imagem do Modelo Relacional"/>
 
-## Documentação 
-
+## Documentação
 A documentação pode ser acessada pelo swagger. Onde o endereço padrão é: [localhost:8000/swagger-ui.html](http://localhost:8000/swagger-ui.html).
 <img src="/project/Swagger.png" alt="Imagem do Swagger"/>
 
