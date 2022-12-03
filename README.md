@@ -23,7 +23,6 @@ A documentação pode ser acessada pelo swagger. Onde o endereço padrão é: [l
 
 ## Autor
 - [@MarinaRohrig](https://github.com/MarinaRohrig)
-- 
 ## Linkedin
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/marina-rohrig)
 
