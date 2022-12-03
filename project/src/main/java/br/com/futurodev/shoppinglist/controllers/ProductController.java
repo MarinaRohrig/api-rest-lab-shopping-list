@@ -67,7 +67,7 @@ public class ProductController {
     private Product toDomainObject(ProductInput productInput){
         Product product = new Product();
         product.setId(productInput.getIdProduct());
-        product.setDescription(productInput.getDescription());
+        product.setName(productInput.getName());
         product.setPrice(productInput.getPrice());
         return product;
     }
@@ -75,7 +75,7 @@ public class ProductController {
     private ProductRepresentation toModel(Product product){
         ProductRepresentation productRepresentation = new ProductRepresentation();
         productRepresentation.setId(product.getId());
-        productRepresentation.setDescription(product.getDescription());
+        productRepresentation.setName(product.getName());
         productRepresentation.setPrice(product.getPrice());
         return productRepresentation;
     }
