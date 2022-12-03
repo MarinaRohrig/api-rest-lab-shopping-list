@@ -13,7 +13,7 @@ public class ProductInput {
 
     private Long idCategory;
 
-    private String description;
+    private String name;
 
     private double price;
 

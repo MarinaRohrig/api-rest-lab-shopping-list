@@ -23,7 +23,7 @@ public class Product implements Serializable {
     private Category category;
 
     @Column(nullable = false)
-    private String description;
+    private String name;
     @Column(nullable = false)
     private double price;
     private boolean buyed;
