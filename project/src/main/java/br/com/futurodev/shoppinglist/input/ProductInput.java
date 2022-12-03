@@ -19,5 +19,4 @@ public class ProductInput {
 
     private boolean buyed;
 
-
 }

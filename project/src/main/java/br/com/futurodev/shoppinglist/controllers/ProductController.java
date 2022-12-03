@@ -69,6 +69,7 @@ public class ProductController {
         product.setId(productInput.getIdProduct());
         product.setName(productInput.getName());
         product.setPrice(productInput.getPrice());
+        product.setBuyed(productInput.isBuyed());
         return product;
     }
 
@@ -77,6 +78,7 @@ public class ProductController {
         productRepresentation.setId(product.getId());
         productRepresentation.setName(product.getName());
         productRepresentation.setPrice(product.getPrice());
+        productRepresentation.setBuyed(product.isBuyed());
         return productRepresentation;
     }
 
